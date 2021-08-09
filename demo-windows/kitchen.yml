@@ -1,0 +1,42 @@
+driver:
+  name: ec2
+  region: ap-southeast-2
+  availability_zone: a
+  instance_type: t3.large
+  associate_public_ip: true
+  interface: dns
+  aws_ssh_key_id: reference
+  tags:
+    Name: demo-windows-chef-test-kitchen
+    Platform: windows
+    Environment: dev
+    EnvironmentType: development
+
+provisioner:
+  name: chef_solo
+  always_update_cookbooks: true
+  product_name: chef
+  product_version: 14.15.6
+  
+verifier:
+  name: inspec
+  sudo: true
+  reporter:
+  - cli
+  - junit:reports/%{platform}_%{suite}_inspec.xml
+
+transport:
+  name: winrm
+  elevated: true
+  connection_timeout: 5
+  connection_retries: 120
+
+platforms:
+  - name: windows
+    driver:
+      image_id: ami-062543b3f8ea66c89
+
+suites:
+  - name: windows
+    run_list:
+      - recipe[demo-windows::windows] 

@@ -1,4 +1,4 @@
-@Library('packer') _
+@Library('ciinabox') _
 
 pipeline {
   
@@ -48,7 +48,7 @@ pipeline {
         packer(
           type: 'windows',
           role: 'testwin19',
-          runList: ["${env.COOKBOOK}::windows"],
+          runList: ["${env.COOKBOOK}::default"],
           debug: true,
           cookbookS3Bucket: env.SOURCE_BUCKET,
           cookbookS3Path: "chef/${env.COOKBOOK}/${env.COOKBOOK_VERSION}/cookbooks.tar.gz",

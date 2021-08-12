@@ -29,6 +29,7 @@ pipeline {
       agent {
         docker {
           image 'base2/bakery:4.7.73'
+          label 'docker'
         }
       }
       steps {

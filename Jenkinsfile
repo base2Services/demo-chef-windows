@@ -28,7 +28,7 @@ pipeline {
     stage('package cookbook') {
       agent {
         docker {
-          image 'base2/bakery:4.7.73',
+          image 'base2/bakery:4.7.73'
         }
       }
       steps {

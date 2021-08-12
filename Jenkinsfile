@@ -1,4 +1,4 @@
-@Library('ciinabox_duarte@windows-update') _
+@Library('duarte@windows-update') _
 
 pipeline {
 

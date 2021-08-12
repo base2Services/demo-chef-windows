@@ -1,4 +1,4 @@
-@Library('duarte@windows-update') _
+@Library('duarte@master') _
 
 pipeline {
 

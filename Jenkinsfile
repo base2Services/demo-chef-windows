@@ -1,4 +1,4 @@
-@Library('ciinabox') _
+@Library('duarte') _
 
 pipeline {
 

@@ -50,6 +50,7 @@ pipeline {
           role: 'testwin19',
           runList: ["${env.COOKBOOK}::default"],
           debug: true,
+          winUpdate: true,
           cookbookS3Bucket: env.SOURCE_BUCKET,
           cookbookS3Path: "chef/${env.COOKBOOK}/${env.COOKBOOK_VERSION}/cookbooks.tar.gz",
           cookbookS3Region: env.REGION,

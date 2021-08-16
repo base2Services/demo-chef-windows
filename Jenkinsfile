@@ -41,7 +41,7 @@ pipeline {
     stage('bake ami') {
       agent {
         docker {
-          image 'base2services/bakery:c4.7.73-p1.7.4'
+          image 'ghcr.io/base2services/bakery:c4.7.73-p1.7.4'
         }
       }
       steps {

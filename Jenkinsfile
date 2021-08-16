@@ -41,7 +41,7 @@ pipeline {
     stage('bake ami') {
       agent {
         docker {
-          image 'base2/bakery:latest'
+          image 'base2/bakery:4.7.73-p1.7.4'
         }
       }
       steps {
